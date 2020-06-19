@@ -4,8 +4,17 @@ import Flat from './flat';
 
 class FlatList extends Component {
   renderList = () => {
-    const { flats } = this.props;
-    return flats.map((flat) => <Flat flat={flat} key={flat.imageUrl} />);
+    return this.props.flats.map((flat, index) => {
+      return (
+        <Flat
+          flat={flat}
+          key={flat.lat}
+          index={index}
+          selectFlat={this.props.selectFlat}
+          selected={flat.name === this.props.selectedFlat.name}
+        />
+      );
+    });
   }
 
   render() {
