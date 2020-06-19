@@ -13,7 +13,7 @@ class Flat extends Component {
     const { flat } = this.props;
     return (
       <div className="card"
-           style={{ backgroundImage: `url("https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat3.jpg")`}} >
+           style={{ backgroundImage: `url(${flat.imageUrl})`}} >
         <div className="card-category">{flat.price}</div>
         <div className="card-description">
           <h2>{flat.name}</h2>

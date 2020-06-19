@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import flats from '../../data/data';
 import Flat from './flat';
 import FlatList from './flat-list';
+import Map from './map';
 
 
 class App extends Component {
@@ -10,16 +11,21 @@ class App extends Component {
 
     this.state = {
       flats: flats,
-      selectedFlatId: ""
+      selectedFlat: ""
     };
+  }
+
+  selectFlat = (imageUrl) => {
+    this.setState({
+      selectedFlat: imageUrl
+    });
   }
 
   render () {
     return (
       <div>
-          <FlatList flats={this.state.flats} />
-        <div className="map-container">
-        </div>
+        <FlatList flats={this.state.flats} />
+        <Map selectFlat={this.selectFlat} />
       </div>
     );
   }
