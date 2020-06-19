@@ -14,8 +14,7 @@ class Flat extends Component {
     return (
       <div className="card" style={{ backgroundImage: `url(${flat.imageUrl})` }}>
         <div className="card-category">
-          {flat.price}
-          {flat.priceCurrency}
+          {flat.price} {flat.priceCurrency}
         </div>
         <div className="card-description">
           <h2>{flat.name}</h2>
