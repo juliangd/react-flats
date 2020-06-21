@@ -21,6 +21,7 @@ class App extends Component {
     this.setState({
       selectedFlat: flats[index]
     });
+    console.log(flats[index]);
   }
 
   center = () => {
