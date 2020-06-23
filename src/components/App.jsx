@@ -12,8 +12,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      flats,
-      selectedFlat: flats[0]
+      selectedFlat: flats[0],
+      flats
     };
   }
 
@@ -21,7 +21,6 @@ class App extends Component {
     this.setState({
       selectedFlat: flats[index]
     });
-    console.log(flats[index]);
   }
 
   center = () => {
@@ -44,7 +43,7 @@ class App extends Component {
             defaultCenter={this.center()}
             defaultZoom={12}
           >
-            <Marker />
+            <Marker lat={this.state.selectedFlat.lat} lng={this.state.selectedFlat.lng} />
           </GoogleMapReact>
         </div>
       </div>

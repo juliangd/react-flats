@@ -16,7 +16,7 @@ class Flat extends Component {
   render() {
     const { flat } = this.props;
     return (
-      <div className="card" style={{ backgroundImage: `url(${flat.imageUrl})` }}>
+      <div className={`card ${this.props.selected ? ' active' : ''}`} style={{ backgroundImage: `url(${flat.imageUrl})` }}>
         <div className="card-category">
           {flat.price} {flat.priceCurrency}
         </div>
